@@ -5,12 +5,15 @@ body{
     text-align: center;
     margin-top: 140px;
     margin-right: 50px;
-    margin-left: 50px;
+    margin-left: 250px;
     padding: 25px;
     border: white;
     background:white;
     box-shadow: 3px 4px grey ;
     border-radius: 12px;
+    width: 40%;
+    
+    
     
 }
 input{
