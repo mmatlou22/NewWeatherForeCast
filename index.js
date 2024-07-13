@@ -6,6 +6,7 @@ function displayApiCity(response){
     const tempWind=document.getElementById("tempWind");
     let  cityTime=document.getElementById("cityTime");
     let date = new Date(response.data.time * 1000);
+    let iconImage=document.getElementById("iconImage");
 
     
     console.log(response)
@@ -15,14 +16,15 @@ function displayApiCity(response){
     tempHumidity.textContent=`${response.data.temperature.humidity}%`;
     tempWind.textContent=`${response.data.wind.speed}km/h`;
     cityTime.textContent=displayDate(date)
+    iconImage.innerHTML =`<img src="${response.data.condition.icon_url}" class="tempIcon" id="tempIcon">`;
 }
 function displayDate(date){
     let hours=date.getHours()
     let minutes=date.getMinutes()
    
 
-    if(minutes <10 || hours<10 ){
-        hours=`0${hours}`
+    if(minutes <10){
+    
         minutes=`0${minutes}`
     }
     

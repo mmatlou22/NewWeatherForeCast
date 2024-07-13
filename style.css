@@ -74,9 +74,9 @@ p{
     font-weight: bold;
 
 }
-.tempIcon{
-    margin-top: 20px;
-    margin-right:7px;
+#tempIcon{
+    margin-top: -15px;
+    margin-right: -10px;
     font-size: 1.5rem;
 }
 a{
