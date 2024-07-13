@@ -1,8 +1,17 @@
 function displayApiCity(response){
     const tempValue=document.getElementById("tempValue");
-    tempValue.textContent=(Math.floor(response.data.temperature.current))
-    const cityInput=document.getElementById("cityInput")
-    cityInput.textContent=response.data.city;
+    const cityInput = document.getElementById("cityInput");
+    const tempDescription=document.getElementById('tempDescription')
+    const tempHumidity=document.getElementById("tempHumidity");
+    const tempWind=document.getElementById("tempWind");
+
+    
+    console.log(response)
+    tempValue.textContent=(Math.floor(response.data.temperature.current));
+   cityInput.textContent=response.data.city;
+    tempDescription.textContent=response.data.condition.description;
+    tempHumidity.textContent=`${response.data.temperature.humidity}%`;
+    tempWind.textContent=`${response.data.wind.speed}km/h`
 }
 
 
