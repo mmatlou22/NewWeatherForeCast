@@ -4,6 +4,8 @@ function displayApiCity(response){
     const tempDescription=document.getElementById('tempDescription')
     const tempHumidity=document.getElementById("tempHumidity");
     const tempWind=document.getElementById("tempWind");
+    let  cityTime=document.getElementById("cityTime");
+    let date = new Date(response.data.time * 1000);
 
     
     console.log(response)
@@ -11,9 +13,26 @@ function displayApiCity(response){
    cityInput.textContent=response.data.city;
     tempDescription.textContent=response.data.condition.description;
     tempHumidity.textContent=`${response.data.temperature.humidity}%`;
-    tempWind.textContent=`${response.data.wind.speed}km/h`
+    tempWind.textContent=`${response.data.wind.speed}km/h`;
+    cityTime.textContent=displayDate(date)
 }
+function displayDate(date){
+    let hours=date.getHours()
+    let minutes=date.getMinutes()
+   
 
+    if(minutes <10 || hours<10 ){
+        hours=`0${hours}`
+        minutes=`0${minutes}`
+    }
+    
+    
+    let days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    let day=days[date.getDay()]
+    let timeString = `${day} ${hours}:${minutes}`;
+  console.log(timeString)
+    return timeString
+}
 
 function apiCity(city){
  let apiKey="0cb149e913a89ff1dbc6ab7o6ft5fdf4";
