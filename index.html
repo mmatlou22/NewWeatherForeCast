@@ -12,32 +12,35 @@
  <div class="appContainer">
  <header>
     <form >
-     <input type="search" id="searchIput" placeholder="Enter city..." required>
+     <input type="search" id="searchInput" placeholder="Enter city..." required>
      <input type="submit" id="searchButton" value="Search">
     </form>
  </header>
  <section>
-    
+     <div class="weatherData">
         <div>
             <h1 id="myCityInput">
         Cape Town
             </h1>
-        </div>
+        
     
-    <div>
+    
     <p>
-       Saturday 15:30, mostly sunny
+     <strong> Saturday</strong> 15:30,<strong>mostly sunny</strong>
        <br>
-       Humidity: 43%, Wind 2km/h
+    <strong>Humidity:</strong> <span class="tempData">43%</span>, <strong>Wind <span class="tempData">2km/h</span>
     </p>
+        </div>
+    <div class="weatherDisplay" >
+      <div class="tempIcon">☀️</div>
+      <div class="tempValue">26</div>
+      <div class="tempUnit">℃</div>
     </div>
-    <div class="tempValue">
-        ☀️ 26℃
-    </div>
+    </div> 
  </section>
     
 
-
+<br>
  <footer>Coded by
  <a href="https://github.com/mmatlou22">Mmatlou Modiba</a> based on
  <a href="https://github.com/mmatlou22/NewWeatherForeCast">GitHub</a> website hosted by

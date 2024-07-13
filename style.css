@@ -1,0 +1,86 @@
+body{
+    background-color: hsl(300, 52%, 88%);
+}
+.appContainer{
+    text-align: center;
+    margin-top: 140px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 25px;
+    border: white;
+    background:white;
+    box-shadow: 3px 4px grey ;
+    border-radius: 12px;
+    
+}
+input{
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    
+
+}
+#searchInput{
+    margin-left:-20px ;
+    padding-left: 10px;
+    width: 70%; 
+    background-color:hsl(300, 52%, 91%) ;
+    border: none;
+}
+#searchButton{
+    width: 15%;
+    margin-left: -60px;
+    border: none;
+    background-color: hsl(300, 100%, 35%);
+    color: white;
+}
+h1{
+    margin-top: 40px;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    
+
+}
+p{
+    margin-left: 30px;
+}
+.tempData{
+   color:hsl(300, 100%, 35%) ;
+   
+}
+.weatherData{
+    display: flex;
+    justify-content: space-between;
+
+}
+.weatherDisplay{
+ margin-top: 60px;
+ margin-right: 90px;
+ display: flex;
+ justify-content: space-evenly;
+ 
+}
+.tempValue{
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tempUnit{
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+.tempIcon{
+    margin-top: 20px;
+    margin-right:7px;
+    font-size: 1.5rem;
+}
+a{
+    color:hsl(300, 100%, 35%)  ;
+}
+
+footer{
+    margin-top: 50px;
+    color: grey;
+}
