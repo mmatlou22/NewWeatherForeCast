@@ -9,18 +9,21 @@
 </head>
 
 <body>
+ <div class="appContainer">
  <header>
     <form >
-     <input type="search" placeholder="Enter city..." required>
-     <input type="submit" value="Search">
+     <input type="search" id="searchIput" placeholder="Enter city..." required>
+     <input type="submit" id="searchButton" value="Search">
     </form>
  </header>
  <section>
-    <h1>
+    
         <div>
+            <h1 id="myCityInput">
         Cape Town
+            </h1>
         </div>
-    </h1>
+    
     <div>
     <p>
        Saturday 15:30, mostly sunny
@@ -28,7 +31,7 @@
        Humidity: 43%, Wind 2km/h
     </p>
     </div>
-    <div>
+    <div class="tempValue">
         ☀️ 26℃
     </div>
  </section>
@@ -40,6 +43,7 @@
  <a href="https://github.com/mmatlou22/NewWeatherForeCast">GitHub</a> website hosted by
  <a href="https://project1weatherforecast.netlify.app/">Netlify</a>
  <script src="index.js"></script>
+ </div>
 </body>
 
 </html>
