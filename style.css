@@ -79,8 +79,37 @@ p{
     margin-right: -10px;
     font-size: 1.5rem;
 }
+.foreCastContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.foreCastDay{
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: grey;
+
+}
+.foreCastTemps{
+    display: flex;
+    justify-content: center;
+  
+    color:hsl(300, 100%, 35%) ;
+}
+.forCastTemp1, .foreCastTemp2{
+    padding:0px 10px;
+}
+.foreCastTemp2{
+    color: hsl(300, 100%, 70%);
+   
+}
+
+.foreCastIcon{
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
 a{
     color:hsl(300, 100%, 35%)  ;
+    text-decoration: none;
 }
 
 footer{
