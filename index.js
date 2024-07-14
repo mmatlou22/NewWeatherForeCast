@@ -16,6 +16,7 @@ function cityApiResponse(response) {
   cityTime.textContent = updatedTime(date);
   iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="tempIcon" id="tempIcon"/>`;
   console.log(iconImage);
+  apiContent(response.data.city)
 }
 function updatedTime(date) {
   let hour = date.getHours();
@@ -50,14 +51,21 @@ function displayCity(event) {
   applyApiContent(searchInput.value);
 }
 
+ function apiContent(city){
+  let apiKey=`0cb149e913a89ff1dbc6ab7o6ft5fdf4`
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+ 
+  axios.get(apiUrl).then(injectHtmlContent)
+}
+
+ 
+ 
 
 
 
 
-
-
- function injectHtmlContent(){
-  
+ function injectHtmlContent(response){
+  console.log(response)
   const foreCastContainer=document.getElementById("foreCastContainer")
   let days = ["Mon", "Tue", "Wed", "Thurs", "Fri"];
   let foreCastHtml=""
@@ -78,6 +86,7 @@ function displayCity(event) {
      </div>`
 
   })
+  
   foreCastContainer.innerHTML=foreCastHtml
 }
 
