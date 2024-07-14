@@ -103,10 +103,10 @@ p{
    
 }
 
-.foreCastIcon{
-    margin-bottom: 25px;
-    font-size: 2rem;
+.forCastTemp1{
+    color:hsl(300, 100%, 35%) ;
 }
+
 a{
     color:hsl(300, 100%, 35%)  ;
     text-decoration: none;

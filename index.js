@@ -51,7 +51,15 @@ function displayCity(event) {
   applyApiContent(searchInput.value);
 }
 
- function apiContent(city){
+ function formattedTime(timestamp){
+  let date= new Date(timestamp * 1000)
+   let days=["Sun", "Mon", "Tue", "Wed"]
+  
+  
+  return days[date.getDay()]
+ }
+
+function apiContent(city){
   let apiKey=`0cb149e913a89ff1dbc6ab7o6ft5fdf4`
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
  
@@ -59,35 +67,32 @@ function displayCity(event) {
 }
 
  
- 
-
-
-
-
  function injectHtmlContent(response){
   console.log(response)
   const foreCastContainer=document.getElementById("foreCastContainer")
-  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri"];
+ 
   let foreCastHtml=""
 
-  days.forEach(function(day){
+  response.data.daily.forEach(function(day, index){
+    if(index < 4){
    
-
-       foreCastHtml=foreCastHtml +  `<div class="foreCastContainer">
+ foreCastHtml=foreCastHtml +  `<div class="foreCastContainer">
      <div class="foreCastDisplay">
-        <div class="foreCastDay">${day}</div>
-        <div class="foreCastIcon">🌦️</div>
+        <div class="foreCastDay">${formattedTime(day.time)}</div>
+        
+        <img src="${day.condition.icon_url}" class="ForeCastIcon">
         <div class="foreCastTemps">
-            <div class="foreCastTemp1">23℃</div>
-            <div class="foreCastTemp2">25℃</div>
+            <div class="foreCastTemp1">${Math.round(day.temperature.maximum)}℃</div>
+            <div class="foreCastTemp2">${Math.round(day.temperature.minimum)}℃</div>
     
         </div>
       </div>
      </div>`
-
+    }
   })
-  
+
   foreCastContainer.innerHTML=foreCastHtml
+
 }
 
 const searchContainer = document.getElementById("searchContainer");
