@@ -50,5 +50,37 @@ function displayCity(event) {
   applyApiContent(searchInput.value);
 }
 
+
+
+
+
+
+
+ function injectHtmlContent(){
+  
+  const foreCastContainer=document.getElementById("foreCastContainer")
+  let days = ["Mon", "Tue", "Wed", "Thurs", "Fri"];
+  let foreCastHtml=""
+
+  days.forEach(function(day){
+   
+
+       foreCastHtml=foreCastHtml +  `<div class="foreCastContainer">
+     <div class="foreCastDisplay">
+        <div class="foreCastDay">${day}</div>
+        <div class="foreCastIcon">🌦️</div>
+        <div class="foreCastTemps">
+            <div class="foreCastTemp1">23℃</div>
+            <div class="foreCastTemp2">25℃</div>
+    
+        </div>
+      </div>
+     </div>`
+
+  })
+  foreCastContainer.innerHTML=foreCastHtml
+}
+
 const searchContainer = document.getElementById("searchContainer");
 searchContainer.addEventListener("submit", displayCity);
+injectHtmlContent()
